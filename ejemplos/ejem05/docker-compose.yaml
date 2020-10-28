@@ -1,0 +1,39 @@
+# Indicamos la versión
+version: '3.7'
+
+# Iniciamos los servicios
+services:
+  # Apache con PHP
+  php-httpd:
+    image: php:7.3-apache
+    container_name: apache-php-lamp
+    ports:
+      - 80:80
+    volumes:
+      - './src:/var/www/html'
+
+  # Maria DB
+  mariadb:
+    image: mariadb:10.5.2
+    container_name: mariadb-lamp
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    environment:
+      TZ: 'Europe/Rome'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ROOT_PASSWORD: 'rootpwd'
+      MYSQL_USER: 'testuser'
+      MYSQL_PASSWORD: 'testpassword'
+      MYSQL_DATABASE: 'testdb'
+
+  # PHPMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+     container_name: phpmyadmin-lamp
+    links:
+      - 'mariadb:db'
+    ports:
+      - 8081:80
+
+volumes:
+  mariadb-volume:
