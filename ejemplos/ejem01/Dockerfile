@@ -4,3 +4,5 @@ FROM php:7.0-apache
 COPY src/ /var/www/html
 # Exponemos el puerto 80
 EXPOSE 80
+# Quien lo ha realizado
+MAINTAINER JL Gonzalez “jlgs@cifpvirgendegracia.com”
