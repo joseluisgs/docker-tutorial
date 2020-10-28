@@ -1,0 +1,43 @@
+# Indicamos la versión
+version: '3.7'
+
+# Iniciamos los servicios
+services:
+  # Apache con PHP
+  apache-php:
+    build: ./apache-php
+    container_name: apache-php-lamp
+    ports:
+      - 80:80
+    volumes:
+      - './src:/var/www/html'
+    networks:
+      - lamp-network
+
+  # Maria DB
+  mariadb:
+    build: ./mariadb
+    container_name: mariadb-lamp
+    volumes:
+      #  - ./mariadb_data:/var/lib/mysql podríamos usar un directorio local llamado mariadb_data
+      - mariadb-volume:/var/lib/mysql
+    networks:
+      - lamp-network
+
+  # PHPMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-lamp
+    links:
+      - 'mariadb:db'
+    ports:
+      - 8081:80
+    networks:
+      - lamp-network
+
+volumes:
+  mariadb-volume:
+
+networks:
+  lamp-network:
+    driver: bridge
