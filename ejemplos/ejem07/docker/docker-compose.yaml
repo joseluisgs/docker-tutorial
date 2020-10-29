@@ -1,0 +1,63 @@
+# Indicamos la versión
+version: '3.7'
+
+# Iniciamos los servicios
+services:
+  # PHP
+  php7:
+    container_name: php7
+    build: ./php
+    volumes:
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/config/php:/usr/local/etc/php
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/code/myapp:/var/www/html/myapp
+    depends_on:
+      - mariadb
+    networks:
+      - lemp-network
+
+  # NGINX
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - 8080:80
+    volumes:
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/config/nginx:/etc/nginx/conf.d
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/code/myapp:/var/www/html/myapp
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/logs:/var/log/nginx
+    depends_on:
+      - php7
+    networks:
+      - lemp-network
+
+  # MARIADB
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    volumes:
+      - /home/informatica/Dropbox/Puertollano 2020-2021/DAW/Temario/docker-tutorial/ejemplos/ejem07/mariadb/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=docker_sample
+    ports:
+      - 3306:3306
+    networks:
+      - lemp-network
+
+  # PHPMYADMIN
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - 'mariadb:db'
+    depends_on:
+      - mariadb
+    ports:
+      - 8081:80
+    networks:
+      - lemp-network
+
+# Si queremos que tengan una red propia a otros contenedores
+networks:
+  lemp-network:
+    driver: bridge
