@@ -33,4 +33,4 @@ s
 
 ## Licencia
 
-Este proyecto esta licenciado bajo licencia **MIT**, si desea saber más, visite el fichero [LICENSE](https://github.com/joseluisgs/docker-tutorial/blob/master/LISENCE) para su uso docente y educativo.
+Este proyecto esta licenciado bajo licencia **MIT**, si desea saber más, visite el fichero [LICENSE](https://github.com/joseluisgs/docker-tutorial/blob/master/LISCENSE) para su uso docente y educativo.
