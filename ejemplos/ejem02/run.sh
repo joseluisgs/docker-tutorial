@@ -6,7 +6,8 @@ docker run -d --name wordpress-db \
     -e MYSQL_ROOT_PASSWORD=secret \
     -e MYSQL_DATABASE=wordpress \
     -e MYSQL_USER=manager \
-    -e MYSQL_PASSWORD=secret mariadb:10.3.9
+    -e MYSQL_PASSWORD=secret \
+    mariadb:10.3.9
 
 # Creamos el contenedor de WordPress
 docker run -d --name wordpress \
