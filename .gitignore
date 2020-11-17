@@ -1,16 +1,5 @@
 *.pptx
 /libros/*
-<<<<<<< HEAD
-/ejemplos/ejem02/wordpress
-/ejemplos/ejem07/mariadb/data
-/ejemplos/ejem07/logs
-
-||||||| Recursos VS Code y Docker Station
-/ejemplos/ejem02/wordpress
-/ejemplos/ejem07/mariadb/data
-/ejemplos/ejem07/logs
-=======
 /ejemplos/ejem02/wordpress/*
 /ejemplos/ejem07/mariadb/data/*
 /ejemplos/ejem07/logs/*
->>>>>>> dev
