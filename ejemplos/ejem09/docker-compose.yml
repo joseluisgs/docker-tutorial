@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  reverseproxy:
+    build: ./reverse
+    container_name: reverseproxy
+    ports:
+      - 8080:8080
+      - 8081:8081
+    networks:
+      - mi-red
+    restart: always
+
+  nginx:
+    # image: nginx:alpine
+    build: ./site1
+    container_name: nginx
+    # Si queremos montar directorios en modo desarrollo, si no copia lo del dockerfile
+    # volumes:
+    #   - ./site1/src/.:/usr/share/nginx/html/
+    depends_on:
+      - reverseproxy
+    networks:
+      - mi-red
+    restart: always
+
+  apache:
+    # image: httpd:alpine
+    build: ./site2
+    container_name: apache
+    # Si queremos montar directorios en modo desarrollo, si no copia lo del dockerfile
+    # volumes:
+    #  - './site2/src/.:/usr/local/apache2/htdocs/'
+    depends_on:
+      - reverseproxy
+    networks:
+      - mi-red
+    restart: always
+
+networks:
+  mi-red:
+    driver: bridge
