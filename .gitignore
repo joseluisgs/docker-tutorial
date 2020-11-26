@@ -1,5 +1,7 @@
 *.pptx
 /libros/*
 /ejemplos/ejem02/wordpress/*
+/ejemplos/ejem03/wordpress/*
+/ejemplos/ejem04/wordpress/*
 /ejemplos/ejem07/mariadb/data/*
 /ejemplos/ejem07/logs/*
