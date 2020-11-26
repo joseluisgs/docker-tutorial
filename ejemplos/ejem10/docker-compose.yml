@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  reverseproxy:
+    image: jwilder/nginx-proxy
+    container_name: reverseproxy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - mi-red
+    restart: always
+    privileged: true
+
+  nginx:
+    # image: nginx:alpine
+    build: ./site1
+    container_name: nginx
+    # Como variable le pasamos el nombre del sitio
+    environment:
+      VIRTUAL_HOST: site1.example.com
+    # Si queremos montar directorios en modo desarrollo, si no copia lo del dockerfile
+    # volumes:
+    #   - ./site1/src/.:/usr/share/nginx/html/
+    depends_on:
+      - reverseproxy
+    networks:
+      - mi-red
+    restart: always
+
+  apache:
+    # image: httpd:alpine
+    build: ./site2
+    container_name: apache
+    environment:
+      VIRTUAL_HOST: site2.example.com
+    # Si queremos montar directorios en modo desarrollo, si no copia lo del dockerfile
+    # volumes:
+    #  - './site2/src/.:/usr/local/apache2/htdocs/'
+    depends_on:
+      - reverseproxy
+    networks:
+      - mi-red
+    restart: always
+
+networks:
+  mi-red:
+    driver: bridge
