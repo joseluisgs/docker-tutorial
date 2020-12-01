@@ -31,7 +31,7 @@ services:
     restart: always
 
   apache:
-    # image: httpd:alpine
+    # image: httpd:apache
     build: ./site2
     container_name: apache
     environment:
