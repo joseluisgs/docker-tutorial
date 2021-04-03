@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  docker-vuejs-app:
+    # Si hemos subido la imagen al registro, la usamos del registro de Docker Hub
+    image: joseluisgs/docker-vuejs-app
+    # Si queremos usar nuestro Dockerdile si no lo hemos subido al registro
+    # build: .
+    container_name: docker-vuejs-app
+    ports:
+      - '8080:8080'
+    networks:
+      - mi-red
+    restart: always
+    privileged: true
+
+networks:
+  mi-red:
+    driver: bridge

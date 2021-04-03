@@ -27,3 +27,10 @@ CMD [ "http-server", "dist" ]
 
 # Puede parecer redundante copiar primero package.json ypackage-lock.json y luego todos los archivos y carpetas del proyecto en dos pasos separados, 
 # pero en realidad hay una muy buena razón para eso (adelanto: nos permite aprovechar las capas de Docker almacenadas en caché).
+
+# Para subirla al registro, primero le ponemos una tag
+# docker build -t joseluisgs/joseluisgs/docker-vuejs-app .
+# Subirla:
+# docker push joseluisgs/docker-vuejs-app
+# Ejecutarla: 
+# docker run -it -p 8080:8080 --rm --name docker-vuejs-app-1 joseluisgs/docker-vuejs-app

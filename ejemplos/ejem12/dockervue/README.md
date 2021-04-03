@@ -1,6 +1,7 @@
 # dockervue
 
 Aplicación Vue 3 + TypeScrypt con Docker
+Te recomiendo leas el dockerfile y dockercompose
 
 ## Project setup
 ```
