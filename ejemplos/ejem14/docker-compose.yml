@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  web:
+    image: 'dockercloud/hello-world:latest'
+  lb:
+    image: 'dockercloud/haproxy:latest'
+    links:
+      - web
+    ports:
+      - '8080:80'
