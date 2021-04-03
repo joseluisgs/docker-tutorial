@@ -1,0 +1,36 @@
+Creamos tres nodos virtuales. Podríamos hacerlo con VirtualBox, pero mola easí porque ya tienen docker
+
+docker-machine create --driver virtualbox vm-manager
+docker-machine create --driver virtualbox vm-worker1
+docker-machine create --driver virtualbox vm-worker2
+
+Iniciamos el Cluster, Maestro
+docker-machine ssh vm-manager "docker swarm init --advertise-addr 192.168.99.102"
+
+Iniciamos los Workers,
+docker-machine ssh vm-worker1 "docker swarm join \
+--token SWMTKN-1-0jmngpcawsd089d88lihjsfmztg6fqakq0cl251v0ccjugy9ra-az2kvtarkzhj3ajk98ckgd38b \
+192.168.99.102:2377"
+Una vez que lo hayas hecho con las dos máquinas, desde vm-manager puedes listar todos los nodos disponibles:
+
+docker-machine ssh vm-manager "docker node ls"
+
+Como es lógico, el archivo docker-compose.yml lo has creado en tu máquina local, pero realmente necesitas lanzarlo desde vm-manager, 
+que es quien puede mandar órdenes a los nodos que tiene tu clúster. Existe una forma muy cómoda para mapear el terminal de vm-manger 
+con el terminal de nuestro equipo local:
+
+docker-machine env vm-manager
+
+Al lanzar este comando se generan unas variables de entorno que nos permiten hacer esta conexión. Ahora ejecuta el siguiente para terminar con la configuración.
+
+eval $(docker-machine env vm-manager)
+Sin ningún tipo de aviso, ahora ya puedes lanzar comandos en el terminal como si estuvieras dentro de vm-manager, pero además puedes utilizar todo de lo que dispones en tu máquina local, como el archivo docker-compose.yml. Para materializar todo lo descrito en él debes aprender otro comando más, docker stack, que funciona de la siguiente manera:
+
+docker stack deploy -c docker-compose.yml myapp
+
+Al cabo de unos segundos todos los contenedores con todas sus replicas serán repartidos entre todos los nodos de tu clúster. Para ver el estado usa este comando:
+
+docker stack ps myapp
+
+Podrás ver que tu aplicación, o stack, está desplegado correctamente (Running) y podrás acceder al frontend a través del puerto 4000 y al backend a través del puerto 8080 ¿pero de qué IP? Pues en realidad de cualquiera de las IP de cualquiera de los nodos, por ejemplo http://192.168.99.102:4000, ya que todos ellos tienen por delante lo que se conoce como el swarm load balancer, el cual conoce dónde hay réplicas del contenedor al que quieres acceder y nos hace transparente esta gestión.
+
