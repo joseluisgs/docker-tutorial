@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  frontend:    
+    image: 0gis0/frontend
+    deploy:
+      replicas: 5
+    ports:
+      - 4000:3000
+    depends_on:
+      - backend
+    networks:
+      - webnet
+  backend:
+    image: 0gis0/backend
+    deploy:
+      replicas: 2
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+    networks:
+      - webnet
+  mongodb:
+    image: mongo:latest
+    networks:
+      - webnet
+networks:
+  webnet:
