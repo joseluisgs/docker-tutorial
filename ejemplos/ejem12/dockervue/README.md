@@ -1,5 +1,7 @@
 # dockervue
 
+Aplicación Vue 3 + TypeScrypt con Docker
+
 ## Project setup
 ```
 npm install
