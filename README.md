@@ -9,7 +9,7 @@
 - [DOCKER Tutorial](#docker-tutorial)
   - [Acerca de](#acerca-de)
   - [Contendios](#contendios)
-  - [FICHEROS DE CAMBIOS](#ficheros-de-cambios)
+  - [Colaborar o nuevos contenidos o ejemplos](#colaborar-o-nuevos-contenidos-o-ejemplos)
     - [¿Cómo colaborar o corregir un cambio?](#cómo-colaborar-o-corregir-un-cambio)
   - [Autor](#autor)
   - [Licencia](#licencia)
@@ -37,7 +37,7 @@ Siempre con el objetivo de poder crear un entorno que podamos comaprtir y facili
 - Docker Swarm
 
 
-## FICHEROS DE CAMBIOS
+## Colaborar o nuevos contenidos o ejemplos
 
 ### ¿Cómo colaborar o corregir un cambio?
 
