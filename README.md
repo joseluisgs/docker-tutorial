@@ -1,12 +1,41 @@
 # DOCKER Tutorial
 
-2DAW Tutorial de Docker para el desarrollo avanzado de código
+2DAW Tutorial de Docker para el desarrollo avanzado de código.
 
 ![GitHub](https://img.shields.io/github/last-commit/joseluisgs/docker-tutorial)
 
-### Acerca de
+![assets/image.png](https://laenredadera.net/wp-content/uploads/2018/01/docker.png)
+
+- [DOCKER Tutorial](#docker-tutorial)
+  - [Acerca de](#acerca-de)
+  - [Contendios](#contendios)
+  - [FICHEROS DE CAMBIOS](#ficheros-de-cambios)
+    - [¿Cómo colaborar o corregir un cambio?](#cómo-colaborar-o-corregir-un-cambio)
+  - [Autor](#autor)
+  - [Licencia](#licencia)
+
+## Acerca de
 
 Tutorial de Docker de supervivencia a 2DAW. Ejemplos usados en clase.
+Aprenderemos a manejar imagenes y contenedores y cómo aplicarlos para mejorar en el desarrollo de software.
+Siempre con el objetivo de poder crear un entorno que podamos comaprtir y facilitar el despliegue de nuestro proyecto.
+
+## Contendios
+- ¿Qué es Docker?
+- Instalación
+- Comandos básicos
+- Ejecutando contenedores
+- Dockerfile y nuestras imágenes
+- Persistencia de datos
+- Enlazando contenedores
+- Docker Compose
+- Docker Hub
+- Despliegue con Docker Hub y GitHub
+- Trucos y consejos
+- Optimización
+- Herramientas para Docker
+- Docker Swarm
+
 
 ## FICHEROS DE CAMBIOS
 
@@ -24,12 +53,16 @@ Para solicitar un cambio o ayudarme a pulir errores o a mejorar el contenido del
 
 Gracias por colaborar y entre todos mejoramos usando GitHub. Espero vuestros pull requests :smile:
 
+
+
 ## Autor
 
-[José Luis González Sánchez](https://twitter.com/joseluisgonsan)
+Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
 
-![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social) ![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)
+[![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social)](https://twitter.com/joseluisgonsan)
+[![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)](https://github.com/joseluisgs)
 
 ## Licencia
 
-Este proyecto esta licenciado bajo licencia **MIT**, si desea saber más, visite el fichero [LICENSE](https://github.com/joseluisgs/docker-tutorial/blob/master/LICENSE) para su uso docente y educativo.
+Este proyecto esta licenciado bajo licencia **MIT**, si desea saber más, visite el fichero
+[LICENSE](./LICENSE) para su uso docente y educativo.
