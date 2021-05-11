@@ -8,10 +8,11 @@
 
 - [DOCKER Tutorial](#docker-tutorial)
   - [Acerca de](#acerca-de)
-  - [Contendios](#contendios)
+  - [Contenidos](#contenidos)
   - [Colaborar o nuevos contenidos o ejemplos](#colaborar-o-nuevos-contenidos-o-ejemplos)
     - [¿Cómo colaborar o corregir un cambio?](#cómo-colaborar-o-corregir-un-cambio)
   - [Autor](#autor)
+    - [Contacto](#contacto)
   - [Licencia](#licencia)
 
 ## Acerca de
@@ -20,7 +21,7 @@ Tutorial de Docker de supervivencia a 2DAW. Ejemplos usados en clase.
 Aprenderemos a manejar imagenes y contenedores y cómo aplicarlos para mejorar en el desarrollo de software.
 Siempre con el objetivo de poder crear un entorno que podamos comaprtir y facilitar el despliegue de nuestro proyecto.
 
-## Contendios
+## Contenidos
 - ¿Qué es Docker?
 - Instalación
 - Comandos básicos
@@ -53,14 +54,35 @@ Para solicitar un cambio o ayudarme a pulir errores o a mejorar el contenido del
 
 Gracias por colaborar y entre todos mejoramos usando GitHub. Espero vuestros pull requests :smile:
 
-
-
 ## Autor
 
 Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
 
 [![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social)](https://twitter.com/joseluisgonsan)
 [![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)](https://github.com/joseluisgs)
+
+### Contacto
+<p>
+  Cualquier cosa que necesites házmelo saber por si puedo ayudarte 💬.
+</p>
+<p>
+    <a href="https://twitter.com/joseluisgonsan" target="_blank">
+        <img src="https://pitlochryfestivaltheatre.com/wp-content/uploads/2020/04/2-27646_twitter-logo-png-transparent-background-logo-twitter-png.png" 
+    height="30">
+    </a> &nbsp;&nbsp;
+    <a href="https://github.com/joseluisgs" target="_blank">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" 
+    height="30">
+    </a> &nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/joseluisgonsan" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" 
+    height="30">
+    </a>  &nbsp;&nbsp;
+    <a href="https://joseluisgs.github.io/" target="_blank">
+        <img src="https://www.lazaroamor.es/img/develop.png" 
+    height="30">
+    </a>
+</p>
 
 ## Licencia
 
